@@ -1,0 +1,33 @@
+<%- include('partials/header.ejs') %>
+
+    <div id="hi" style="height: 2000px;" class="container jumbotron">
+        <div class="row" style=margin-top:10px;display:flex;flex-wrap:wrap;>
+            <% pics.forEach(function(pic){%>
+                <div class="col-md-3">
+                    <div align="center" class="zoom" style="transition: 0.1s;">
+                        <div id="chu">
+                            <a href="/next/<%= pic.name %>" type="__blank">
+                        <img src="<%= pic.image %>" alt="image"
+                            style="border: 4px solid rgb(236, 222, 222);width:180px;height:250px;border-radius: 5px 5px 5px 5px;">
+                        <div align="center" class="caption">
+                            <h4 class="glow" style="font-weight:700;font-family: 'Cairo', sans-serif;"><%= pic.name %>
+                            </h4>
+                           
+                        </div>
+                    </a>
+                            <hr width="200px">
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <% }); %>
+
+        </div>
+    </div>
+
+
+
+
+    <%- include('partials/footer.ejs') %>

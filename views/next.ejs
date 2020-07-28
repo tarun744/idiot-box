@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs') %>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <div id="hi" class="container jumbotron">
+        <div style="color: white;font-size: 10px;" width="width:content | max;">
+            <%  pics.forEach(function(pic){%>
+
+
+                <img src="<%= pic.image %>" alt="image" style="border: 4px solid rgb(236, 222, 222);width:180px;height:250px;border-radius: 5px 5px 5px 5px">
+
+                <div style="transform: translate(200px, -250px);font-size: 100px;width: 600px;" id="movie-info" class="caption">
+                    <h4 style="font-size: 50px;font-weight: 300;font-family: Arial, Helvetica, sans-serif;color: aliceblue;">
+                        <%= pic.name %>
+                    </h4>
+                    <h5 style="margin-top: 30px;font-size: 20px;text-decoration: underline">GENRE: <%= pic.genre %></h5>
+                    <h5 style="margin-top: 30px;font-size: 20px;text-decoration: underline">YEAR: <%= pic.date %></h5>
+                    <h5 style="margin-top: 30px;font-size: 20px;text-decoration: underline">Rating: <%= pic.rating %></h5>
+                </div>
+                <div style="margin-top: -200px;width:auto;" id="movie-info">
+                    <h2>Description:</h2>
+                    <h4><%= pic.description %> <br></h4>
+                    <hr>
+                </div>
+                <div width="width:content | max;" align="center">
+                    <iframe src="<%= pic.video %>" id="frm" style="width: 1000px;height: 500px;border: 5px solid rgba(210,210,210,0.1);border-radius: 25px" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <hr width="600px">
+                </div>
+                <!--            <img src="<%= pic.screenshot %>" alt="image" style="margin-top:250px; border: 4px solid rgb(236, 222, 222);width:180px;height:250px;">-->
+                <div width="width:content | max;" align="center">
+                    <div class="container" style="width:900px;">
+                        <h4>G-Drive link:<a type="button" href="<%=pic.dlink %>" class="btn btn-dark" target="_blank">Download</a></h4>
+                        <hr width="200px">
+                    </div>
+                    <div class="container" style="width:900px;">
+                        <h4>Torrent link:<a type="button" href="<%= pic.tlink %>" class="btn btn-dark">Download</a></h4>
+                        <hr width="200px">
+                    </div>
+                    <div class="container" style="width:900px;">
+                        <h4>Subtitles link: <a type="button" href="<%=pic.slink %>" class="btn btn-dark">Download</a></h4>
+                        <hr width="200px">
+                    </div>
+                </div>
+
+                <% }); %>
+        </div>
+    </div>
+
+
+
+
+
+    <%- include('partials/footer.ejs') %>

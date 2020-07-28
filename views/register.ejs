@@ -1,0 +1,23 @@
+
+<%- include('partials/header.ejs') %>
+
+
+<div style="margin-top: 10%;width:500px" class="container">
+    <div class="jumbotron">
+        <a href="/"><img style="height: 15px;transform: translate(-10px,-10px)" src="https://image.flaticon.com/icons/svg/271/271203.svg"></a>
+        <h2 style="margin-top: 0;font-size: 40px;" align="center">SignUp</h2>
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="password">
+            </div><div class="form-group">
+                <input  class="btn btn-primary btn-block"type="submit" value="Signup">
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('partials/footer.ejs') %>
