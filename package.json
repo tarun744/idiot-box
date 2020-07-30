@@ -9,7 +9,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "create-bundle": "tsc && node tsa.zip/index.js ",
-        "start": "NODE_ENV=production node tsa.zip/index.js"
+        "start": "NODE_ENV=production node index.js"
     },
     "author": "",
     "license": "ISC",
