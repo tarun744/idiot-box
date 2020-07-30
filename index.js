@@ -355,6 +355,6 @@ function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
 
-app.listen(8000, process.env.IP, function() {
+app.listen(process.env.IP || 5000, function() {
     console.log("Server has Started.......Enjoy (•‿•)");
 });
