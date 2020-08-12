@@ -10,7 +10,7 @@ var localstrategy = require("passport-local")
 var User = require("./models/user")
 var User1 = require("./models/user1")
 var regex = require("regex");
-mongoose.connect("mongodb://100.26.229.67:27017/camp", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:27017/camp", { useNewUrlParser: true });
 app.use(express.static("public"));
 app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000, // One day in milliseconds
@@ -18,7 +18,7 @@ app.use(cookieSession({
 }));
 
 app.use(require("express-session")({
-    secret: "tatti khalo fraands",
+    secret: "fraands",
     resave: false,
     saveUninitialized: false
 }));
@@ -355,6 +355,6 @@ function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
 
-app.listen(process.env.IP || 5000, function() {
+app.listen( 5000, process.env.IP,function() {
     console.log("Server has Started.......Enjoy (•‿•)");
 });
